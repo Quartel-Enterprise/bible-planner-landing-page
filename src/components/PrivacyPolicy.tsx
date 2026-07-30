@@ -7,7 +7,7 @@ export function PrivacyPolicy() {
     const content = {
         pt: {
             title: "Política de Privacidade",
-            lastUpdate: "Última atualização: 14 de julho de 2026",
+            lastUpdate: "Última atualização: 29 de julho de 2026",
             sections: [
                 {
                     title: "1. Introdução",
@@ -22,7 +22,8 @@ export function PrivacyPolicy() {
                             list: [
                                 "Nome e endereço de e-mail associados à sua conta Google ou Apple",
                                 "Foto de perfil (se disponibilizada pelo provedor de login)",
-                                "Provedor de autenticação utilizado e data/hora dos seus logins"
+                                "Provedor de autenticação utilizado e data/hora dos seus logins",
+                                "Nome de exibição e foto de perfil personalizados, caso você opte por editá-los no App (a foto enviada por você é armazenada em nosso serviço de armazenamento em nuvem, Supabase Storage)"
                             ]
                         },
                         {
@@ -52,12 +53,13 @@ export function PrivacyPolicy() {
                             content: "Se você optar por assinar o Bible Planner Pro, as transações são processadas através da Apple App Store ou Google Play Store. Utilizamos o RevenueCat para gerenciar o status da sua assinatura.",
                             list: [
                                 "Não coletamos nem armazenamos detalhes de pagamento ou cartões de crédito.",
-                                "Apenas recebemos confirmação de que sua assinatura está ativa para desbloquear recursos Pro."
+                                "Apenas recebemos confirmação de que sua assinatura está ativa para desbloquear recursos Pro.",
+                                "Na versão Desktop, a compra é concluída em uma página de checkout na web operada pela RevenueCat, aberta no navegador do seu sistema; um identificador anônimo (não vinculado à sua identidade) é armazenado localmente no seu computador para associar a compra à sua assinatura."
                             ]
                         },
                         {
                             title: "2.6 Dados de Analytics e Diagnóstico",
-                            content: "Utilizamos o Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android e iOS), Firebase Performance Monitoring (iOS) e o Google Analytics 4 (versão Desktop) para entender como o App é utilizado, identificar falhas e melhorar sua experiência. Isso inclui:",
+                            content: "Utilizamos o Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android e iOS), Firebase Performance Monitoring (iOS), o Google Analytics 4 (versão Desktop) e o Sentry (relatório de falhas na versão Desktop) para entender como o App é utilizado, identificar falhas e melhorar sua experiência. Isso inclui:",
                             list: [
                                 "Telas visitadas e ações realizadas no App (ex: concluir um dia de leitura, abrir um plano)",
                                 "Relatórios de erros e falhas do aplicativo",
@@ -112,9 +114,10 @@ export function PrivacyPolicy() {
                     title: "5. Compartilhamento de Dados e Serviços de Terceiros",
                     content: "O Bible Planner não vende seus dados. Compartilhamos informações apenas com prestadores de serviço necessários para o funcionamento do App:",
                     list: [
-                        "Supabase: autenticação de conta, banco de dados na nuvem, sincronização em tempo real e geração de conteúdo do Estudo com IA",
+                        "Supabase: autenticação de conta, banco de dados na nuvem, armazenamento de arquivos (foto de perfil), sincronização em tempo real e geração de conteúdo do Estudo com IA",
                         "Firebase (Google): analytics, relatório de falhas (Crashlytics) e configuração remota de recursos",
-                        "RevenueCat: gerenciamento e validação de assinaturas",
+                        "Sentry: relatório de falhas na versão Desktop do App",
+                        "RevenueCat: gerenciamento e validação de assinaturas (na versão Desktop, processamento de pagamento via checkout na web)",
                         "Google Sign-In e Sign in with Apple: autenticação de conta",
                         "Lojas de Aplicativos (Apple/Google): processamento de pagamentos"
                     ]
@@ -160,7 +163,7 @@ export function PrivacyPolicy() {
         },
         en: {
             title: "Privacy Policy",
-            lastUpdate: "Last updated: July 14, 2026",
+            lastUpdate: "Last updated: July 29, 2026",
             sections: [
                 {
                     title: "1. Introduction",
@@ -175,7 +178,8 @@ export function PrivacyPolicy() {
                             list: [
                                 "Name and email address associated with your Google or Apple account",
                                 "Profile photo (if provided by the sign-in provider)",
-                                "Authentication provider used and the date/time of your sign-ins"
+                                "Authentication provider used and the date/time of your sign-ins",
+                                "A custom display name and profile photo, if you choose to edit them in the App (a photo you upload is stored in our cloud storage service, Supabase Storage)"
                             ]
                         },
                         {
@@ -205,12 +209,13 @@ export function PrivacyPolicy() {
                             content: "If you choose to subscribe to Bible Planner Pro, transactions are processed through the Apple App Store or Google Play Store. We use RevenueCat to manage your subscription status.",
                             list: [
                                 "We do not collect or store payment details or credit cards.",
-                                "We only receive confirmation that your subscription is active to unlock Pro features."
+                                "We only receive confirmation that your subscription is active to unlock Pro features.",
+                                "On Desktop, purchases are completed on a web checkout page operated by RevenueCat, opened in your system browser; a locally stored anonymous identifier (not linked to your identity) is used on your computer to associate the purchase with your subscription."
                             ]
                         },
                         {
                             title: "2.6 Analytics and Diagnostic Data",
-                            content: "We use Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android and iOS), Firebase Performance Monitoring (iOS), and Google Analytics 4 (Desktop version) to understand how the App is used, identify issues, and improve your experience. This includes:",
+                            content: "We use Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android and iOS), Firebase Performance Monitoring (iOS), Google Analytics 4 (Desktop version), and Sentry (crash reporting on the Desktop version) to understand how the App is used, identify issues, and improve your experience. This includes:",
                             list: [
                                 "Screens visited and actions taken in the App (e.g., completing a reading day, opening a plan)",
                                 "Crash and error reports",
@@ -265,9 +270,10 @@ export function PrivacyPolicy() {
                     title: "5. Data Sharing and Third-Party Services",
                     content: "Bible Planner does not sell your data. We only share information with service providers necessary for the App to function:",
                     list: [
-                        "Supabase: account authentication, cloud database, real-time sync, and AI Study content generation",
+                        "Supabase: account authentication, cloud database, file storage (profile photo), real-time sync, and AI Study content generation",
                         "Firebase (Google): analytics, crash reporting (Crashlytics), and remote feature configuration",
-                        "RevenueCat: subscription management and validation",
+                        "Sentry: crash reporting on the Desktop version of the App",
+                        "RevenueCat: subscription management and validation (on Desktop, payment processing via web checkout)",
                         "Google Sign-In and Sign in with Apple: account authentication",
                         "App Stores (Apple/Google): payment processing"
                     ]
@@ -313,7 +319,7 @@ export function PrivacyPolicy() {
         },
         es: {
             title: "Política de Privacidad",
-            lastUpdate: "Última actualización: 14 de julio de 2026",
+            lastUpdate: "Última actualización: 29 de julio de 2026",
             sections: [
                 {
                     title: "1. Introducción",
@@ -328,7 +334,8 @@ export function PrivacyPolicy() {
                             list: [
                                 "Nombre y correo electrónico asociados a tu cuenta de Google o Apple",
                                 "Foto de perfil (si el proveedor de inicio de sesión la proporciona)",
-                                "Proveedor de autenticación utilizado y fecha/hora de tus inicios de sesión"
+                                "Proveedor de autenticación utilizado y fecha/hora de tus inicios de sesión",
+                                "Nombre de usuario y foto de perfil personalizados, si eliges editarlos en la App (la foto que subes se almacena en nuestro servicio de almacenamiento en la nube, Supabase Storage)"
                             ]
                         },
                         {
@@ -358,12 +365,13 @@ export function PrivacyPolicy() {
                             content: "Si optas por suscribirte a Bible Planner Pro, las transacciones se procesan a través de Apple App Store o Google Play Store. Utilizamos RevenueCat para gestionar el estado de tu suscripción.",
                             list: [
                                 "No recopilamos ni almacenamos detalles de pago ni tarjetas de crédito.",
-                                "Solo recibimos confirmación de que tu suscripción está activa para desbloquear funciones Pro."
+                                "Solo recibimos confirmación de que tu suscripción está activa para desbloquear funciones Pro.",
+                                "En la versión de Escritorio, la compra se completa en una página de pago en la web operada por RevenueCat, abierta en el navegador de tu sistema; un identificador anónimo (no vinculado a tu identidad) se almacena localmente en tu computadora para asociar la compra con tu suscripción."
                             ]
                         },
                         {
                             title: "2.6 Datos de Analítica y Diagnóstico",
-                            content: "Utilizamos Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android e iOS), Firebase Performance Monitoring (iOS) y Google Analytics 4 (versión de Escritorio) para entender cómo se usa la App, identificar fallos y mejorar tu experiencia. Esto incluye:",
+                            content: "Utilizamos Firebase Analytics, Firebase Crashlytics, Firebase Remote Config (Android e iOS), Firebase Performance Monitoring (iOS), Google Analytics 4 (versión de Escritorio) y Sentry (informe de fallos en la versión de Escritorio) para entender cómo se usa la App, identificar fallos y mejorar tu experiencia. Esto incluye:",
                             list: [
                                 "Pantallas visitadas y acciones realizadas en la App (p. ej., completar un día de lectura, abrir un plan)",
                                 "Informes de errores y fallos de la aplicación",
@@ -418,9 +426,10 @@ export function PrivacyPolicy() {
                     title: "5. Compartir Datos y Servicios de Terceros",
                     content: "Bible Planner no vende tus datos. Solo compartimos información con proveedores de servicios necesarios para el funcionamiento de la App:",
                     list: [
-                        "Supabase: autenticación de cuenta, base de datos en la nube, sincronización en tiempo real y generación de contenido del Estudio con IA",
+                        "Supabase: autenticación de cuenta, base de datos en la nube, almacenamiento de archivos (foto de perfil), sincronización en tiempo real y generación de contenido del Estudio con IA",
                         "Firebase (Google): analítica, informes de fallos (Crashlytics) y configuración remota de funciones",
-                        "RevenueCat: gestión y validación de suscripciones",
+                        "Sentry: informe de fallos en la versión de Escritorio de la App",
+                        "RevenueCat: gestión y validación de suscripciones (en la versión de Escritorio, procesamiento de pagos mediante checkout en la web)",
                         "Google Sign-In y Sign in with Apple: autenticación de cuenta",
                         "Tiendas de Aplicaciones (Apple/Google): procesamiento de pagos"
                     ]

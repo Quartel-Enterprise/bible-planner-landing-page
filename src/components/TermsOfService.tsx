@@ -7,7 +7,7 @@ export function TermsOfService() {
     const content = {
         en: {
             title: "Terms of Service",
-            lastUpdate: "Last Updated: July 14, 2026",
+            lastUpdate: "Last Updated: July 29, 2026",
             sections: [
                 {
                     title: "1. Acceptance of Terms",
@@ -24,8 +24,10 @@ export function TermsOfService() {
                         "Bible Version Downloads: download and manage multiple Bible translations for offline reading",
                         "AI Daily Study (Pro Feature): AI-generated devotional content for the day's reading, with a limited number of free uses",
                         "Account and Sync (Optional): sign in with Google or Apple to sync your progress and preferences across devices, and manage connected devices",
+                        "Profile Customization: edit your display name and profile photo",
                         "Theme Customization: light and dark themes, Material You dynamic colors support, and custom theme selection",
-                        "Multi-platform Support: available on Android, iOS, Web, and Desktop"
+                        "Multi-platform Support: available on Android, iOS, Web, and Desktop",
+                        "App Store Review Prompts: the App may ask you to rate it on the Google Play Store or Apple App Store, using the platform's native review prompt, at certain reading milestones"
                     ]
                 },
                 {
@@ -58,7 +60,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "4.2 Payment Processing",
-                            content: "All payments are processed through the Apple App Store or Google Play Store. We use RevenueCat to manage and validate your subscription status."
+                            content: "On Android and iOS, all payments are processed through the Google Play Store or Apple App Store. On Desktop, payments are processed through a web checkout page hosted by RevenueCat and opened in your system browser, rather than through an app store. We use RevenueCat to manage and validate your subscription status on all platforms."
                         },
                         {
                             title: "4.3 Management and Cancellation",
@@ -201,7 +203,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "10.4 Third-Party Services",
-                            content: "The App integrates third-party services to provide its features, including Firebase (Google), Supabase, RevenueCat, Google Sign-In, Sign in with Apple, and a third-party AI content provider. We are not responsible for the availability, functionality, security, or content of these third-party services, which are governed by their own terms and privacy policies."
+                            content: "The App integrates third-party services to provide its features, including Firebase (Google), Supabase, RevenueCat, Sentry (Desktop crash reporting), Google Sign-In, Sign in with Apple, and a third-party AI content provider. We are not responsible for the availability, functionality, security, or content of these third-party services, which are governed by their own terms and privacy policies."
                         }
                     ]
                 },
@@ -250,7 +252,7 @@ export function TermsOfService() {
         },
         pt: {
             title: "Termos de Serviço",
-            lastUpdate: "Última Atualização: 14 de julho de 2026",
+            lastUpdate: "Última Atualização: 29 de julho de 2026",
             sections: [
                 {
                     title: "1. Aceitação dos Termos",
@@ -267,8 +269,10 @@ export function TermsOfService() {
                         "Download de Versões da Bíblia: baixe e gerencie múltiplas traduções para leitura offline",
                         "Estudo Diário com IA (Recurso Pro): conteúdo devocional gerado por IA para a leitura do dia, com um número limitado de usos gratuitos",
                         "Conta e Sincronização (Opcional): faça login com Google ou Apple para sincronizar seu progresso e preferências entre dispositivos, e gerencie os dispositivos conectados",
+                        "Personalização de Perfil: edite seu nome de exibição e foto de perfil",
                         "Personalização de Tema: temas claro e escuro, suporte a cores dinâmicas do Material You e seleção de tema personalizado",
-                        "Suporte Multiplataforma: disponível no Android, iOS, Web e Desktop"
+                        "Suporte Multiplataforma: disponível no Android, iOS, Web e Desktop",
+                        "Solicitações de Avaliação: o App pode solicitar que você o avalie na Google Play Store ou na Apple App Store, usando o recurso nativo de avaliação da plataforma, em determinados marcos de leitura"
                     ]
                 },
                 {
@@ -301,7 +305,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "4.2 Processamento de Pagamento",
-                            content: "Todos os pagamentos são processados através da Apple App Store ou Google Play Store. Utilizamos o RevenueCat para gerenciar e validar o status da sua assinatura."
+                            content: "No Android e iOS, todos os pagamentos são processados através da Google Play Store ou Apple App Store. No Desktop, os pagamentos são processados através de uma página de checkout na web, operada pela RevenueCat e aberta no navegador do seu sistema, em vez de uma loja de aplicativos. Utilizamos o RevenueCat para gerenciar e validar o status da sua assinatura em todas as plataformas."
                         },
                         {
                             title: "4.3 Gerenciamento e Cancelamento",
@@ -444,7 +448,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "10.4 Serviços de Terceiros",
-                            content: "O App integra serviços de terceiros para fornecer seus recursos, incluindo Firebase (Google), Supabase, RevenueCat, Google Sign-In, Sign in with Apple e um provedor de IA de terceiros. Não somos responsáveis pela disponibilidade, funcionalidade, segurança ou conteúdo desses serviços de terceiros, que são regidos por seus próprios termos e políticas de privacidade."
+                            content: "O App integra serviços de terceiros para fornecer seus recursos, incluindo Firebase (Google), Supabase, RevenueCat, Sentry (relatório de falhas no Desktop), Google Sign-In, Sign in with Apple e um provedor de IA de terceiros. Não somos responsáveis pela disponibilidade, funcionalidade, segurança ou conteúdo desses serviços de terceiros, que são regidos por seus próprios termos e políticas de privacidade."
                         }
                     ]
                 },
@@ -493,7 +497,7 @@ export function TermsOfService() {
         },
         es: {
             title: "Términos de Servicio",
-            lastUpdate: "Última Actualización: 14 de julio de 2026",
+            lastUpdate: "Última Actualización: 29 de julio de 2026",
             sections: [
                 {
                     title: "1. Aceptación de los Términos",
@@ -510,8 +514,10 @@ export function TermsOfService() {
                         "Descarga de Versiones de la Biblia: descarga y gestiona múltiples traducciones para lectura sin conexión",
                         "Estudio Diario con IA (Función Pro): contenido devocional generado por IA para la lectura del día, con un número limitado de usos gratuitos",
                         "Cuenta y Sincronización (Opcional): inicia sesión con Google o Apple para sincronizar tu progreso y preferencias entre dispositivos, y gestiona los dispositivos conectados",
+                        "Personalización de Perfil: edita tu nombre de usuario y foto de perfil",
                         "Personalización de Tema: temas claro y oscuro, soporte para colores dinámicos de Material You y selección de tema personalizado",
-                        "Soporte Multiplataforma: disponible en Android, iOS, Web y Escritorio"
+                        "Soporte Multiplataforma: disponible en Android, iOS, Web y Escritorio",
+                        "Solicitudes de Reseña: la App puede pedirte que la califiques en la Google Play Store o la Apple App Store, usando el aviso nativo de reseñas de la plataforma, en ciertos hitos de lectura"
                     ]
                 },
                 {
@@ -544,7 +550,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "4.2 Procesamiento de Pagos",
-                            content: "Todos los pagos se procesan a través de Apple App Store o Google Play Store. Utilizamos RevenueCat para gestionar y validar el estado de tu suscripción."
+                            content: "En Android e iOS, todos los pagos se procesan a través de Google Play Store o Apple App Store. En Escritorio, los pagos se procesan mediante una página de checkout en la web, operada por RevenueCat y abierta en el navegador de tu sistema, en lugar de una tienda de aplicaciones. Utilizamos RevenueCat para gestionar y validar el estado de tu suscripción en todas las plataformas."
                         },
                         {
                             title: "4.3 Gestión y Cancelación",
@@ -687,7 +693,7 @@ export function TermsOfService() {
                         },
                         {
                             title: "10.4 Servicios de Terceros",
-                            content: "La App integra servicios de terceros para proporcionar sus funciones, incluyendo Firebase (Google), Supabase, RevenueCat, Google Sign-In, Sign in with Apple y un proveedor de IA de terceros. No somos responsables de la disponibilidad, funcionalidad, seguridad o contenido de estos servicios de terceros, que se rigen por sus propios términos y políticas de privacidad."
+                            content: "La App integra servicios de terceros para proporcionar sus funciones, incluyendo Firebase (Google), Supabase, RevenueCat, Sentry (informe de fallos en Escritorio), Google Sign-In, Sign in with Apple y un proveedor de IA de terceros. No somos responsables de la disponibilidad, funcionalidad, seguridad o contenido de estos servicios de terceros, que se rigen por sus propios términos y políticas de privacidad."
                         }
                     ]
                 },
