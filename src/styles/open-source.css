@@ -112,29 +112,3 @@
     padding: 1.5rem;
   }
 }
-
-.open-source-footer {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.open-source-link-container {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  border-radius: 2rem;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  text-decoration: none;
-  color: var(--color-text);
-  transition: all 0.2s ease;
-  font-weight: 500;
-}
-
-.open-source-link-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--color-shadow);
-}

@@ -72,25 +72,6 @@ export function OpenSource() {
                         </a>
                     ))}
                 </div>
-
-                <div className={`open-source-footer ${isInView ? 'animate-slide-up' : 'animate-slide-up-initial'}`} style={{ animationDelay: '0.3s' }}>
-                    <a
-                        href="https://github.com/Quartel-Enterprise/bible-versions/tree/main"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="open-source-link-container"
-                        onClick={() => logEvent({ 
-                            name: 'social_click', 
-                            params: { 
-                                platform: 'github', 
-                                origin: 'open_source_bible_versions' 
-                            } 
-                        })}
-                    >
-                        <GithubIcon size={20} />
-                        <span>{t('check_out_bible_versions')}</span>
-                    </a>
-                </div>
             </div>
         </section>
     );
