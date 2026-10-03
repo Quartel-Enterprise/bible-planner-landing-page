@@ -7,7 +7,7 @@ export function PrivacyPolicy() {
     const content = {
         pt: {
             title: "Política de Privacidade",
-            lastUpdate: "Última atualização: 29 de julho de 2026",
+            lastUpdate: "Última atualização: 3 de outubro de 2026",
             sections: [
                 {
                     title: "1. Introdução",
@@ -69,7 +69,18 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.7 Dados que NÃO Coletamos",
+                            title: "2.7 Publicidade (Vídeos com Recompensa)",
+                            content: "No Android e no iOS, quando você já usou seus estudos com IA gratuitos, o App pode oferecer a opção de assistir a um vídeo curto com recompensa para desbloquear mais um estudo. Assistir é sempre opcional: você também pode assinar o Pro ou simplesmente não desbloquear. Os vídeos são exibidos pelo Google AdMob, que pode coletar:",
+                            list: [
+                                "Identificador de publicidade do dispositivo (Advertising ID no Android; no iOS não solicitamos permissão de rastreamento, então o IDFA não é usado)",
+                                "Informações técnicas do dispositivo, como modelo, sistema operacional, endereço IP e idioma",
+                                "Interações com o anúncio, como visualizações, cliques e se a recompensa foi concedida",
+                                "Onde a lei exigir consentimento (por exemplo, no Espaço Econômico Europeu, no Reino Unido e em alguns estados dos EUA), pedimos sua escolha por meio da plataforma de consentimento do Google antes de exibir qualquer anúncio; você pode alterá-la a qualquer momento em Perfil > Opções de privacidade",
+                                "Registramos em nosso servidor apenas que um estudo foi desbloqueado por vídeo, para aplicar o limite diário de desbloqueios"
+                            ]
+                        },
+                        {
+                            title: "2.8 Dados que NÃO Coletamos",
                             content: "O Bible Planner NÃO coleta:",
                             list: [
                                 "Informações de contatos do seu dispositivo",
@@ -90,6 +101,7 @@ export function PrivacyPolicy() {
                         "Gerar o conteúdo do Estudo Diário com IA que você solicita",
                         "Processar e validar assinaturas Pro",
                         "Entender como o App é utilizado, corrigir falhas e priorizar melhorias",
+                        "Exibir, quando você escolher, vídeos com recompensa que desbloqueiam estudos com IA",
                         "Cumprir obrigações legais, quando aplicável"
                     ]
                 },
@@ -116,6 +128,7 @@ export function PrivacyPolicy() {
                     list: [
                         "Supabase: autenticação de conta, banco de dados na nuvem, armazenamento de arquivos (foto de perfil), sincronização em tempo real e geração de conteúdo do Estudo com IA",
                         "Firebase (Google): analytics, relatório de falhas (Crashlytics) e configuração remota de recursos",
+                        "Google AdMob: exibição dos vídeos com recompensa opcionais e gestão do consentimento de publicidade",
                         "Sentry: relatório de falhas na versão Desktop do App",
                         "RevenueCat: gerenciamento e validação de assinaturas (na versão Desktop, processamento de pagamento via checkout na web)",
                         "Google Sign-In e Sign in with Apple: autenticação de conta",
@@ -163,7 +176,7 @@ export function PrivacyPolicy() {
         },
         en: {
             title: "Privacy Policy",
-            lastUpdate: "Last updated: July 29, 2026",
+            lastUpdate: "Last updated: October 3, 2026",
             sections: [
                 {
                     title: "1. Introduction",
@@ -225,7 +238,18 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.7 Data We Do NOT Collect",
+                            title: "2.7 Advertising (Rewarded Videos)",
+                            content: "On Android and iOS, once you have used your free AI studies, the App may offer to show a short rewarded video that unlocks one more study. Watching is always optional: you can also subscribe to Pro or simply not unlock it. The videos are served by Google AdMob, which may collect:",
+                            list: [
+                                "Your device's advertising identifier (Advertising ID on Android; on iOS we do not ask for tracking permission, so the IDFA is not used)",
+                                "Technical device information, such as model, operating system, IP address and language",
+                                "Interactions with the ad, such as views, clicks and whether the reward was granted",
+                                "Where the law requires consent (for example in the European Economic Area, the United Kingdom and some US states), we ask for your choice through Google's consent platform before any ad is shown; you can change it at any time in Profile > Privacy options",
+                                "Our server only records that a study was unlocked with a video, to apply the daily limit on such unlocks"
+                            ]
+                        },
+                        {
+                            title: "2.8 Data We Do NOT Collect",
                             content: "Bible Planner does NOT collect:",
                             list: [
                                 "Contacts from your device",
@@ -246,6 +270,7 @@ export function PrivacyPolicy() {
                         "Generate the AI Daily Study content you request",
                         "Process and validate Pro subscriptions",
                         "Understand how the App is used, fix issues, and prioritize improvements",
+                        "Show rewarded videos that unlock AI studies, when you choose to watch them",
                         "Comply with legal obligations, where applicable"
                     ]
                 },
@@ -272,6 +297,7 @@ export function PrivacyPolicy() {
                     list: [
                         "Supabase: account authentication, cloud database, file storage (profile photo), real-time sync, and AI Study content generation",
                         "Firebase (Google): analytics, crash reporting (Crashlytics), and remote feature configuration",
+                        "Google AdMob: serving the optional rewarded videos and managing advertising consent",
                         "Sentry: crash reporting on the Desktop version of the App",
                         "RevenueCat: subscription management and validation (on Desktop, payment processing via web checkout)",
                         "Google Sign-In and Sign in with Apple: account authentication",
@@ -319,7 +345,7 @@ export function PrivacyPolicy() {
         },
         es: {
             title: "Política de Privacidad",
-            lastUpdate: "Última actualización: 29 de julio de 2026",
+            lastUpdate: "Última actualización: 3 de octubre de 2026",
             sections: [
                 {
                     title: "1. Introducción",
@@ -381,7 +407,18 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.7 Datos que NO Recopilamos",
+                            title: "2.7 Publicidad (Videos con Recompensa)",
+                            content: "En Android e iOS, cuando ya usaste tus estudios con IA gratuitos, la App puede ofrecerte ver un video corto con recompensa para desbloquear un estudio más. Verlo es siempre opcional: también puedes suscribirte a Pro o simplemente no desbloquearlo. Los videos los muestra Google AdMob, que puede recopilar:",
+                            list: [
+                                "El identificador de publicidad del dispositivo (Advertising ID en Android; en iOS no pedimos permiso de seguimiento, por lo que no se usa el IDFA)",
+                                "Información técnica del dispositivo, como modelo, sistema operativo, dirección IP e idioma",
+                                "Interacciones con el anuncio, como visualizaciones, clics y si se otorgó la recompensa",
+                                "Donde la ley exige consentimiento (por ejemplo, en el Espacio Económico Europeo, el Reino Unido y algunos estados de EE. UU.), pedimos tu elección mediante la plataforma de consentimiento de Google antes de mostrar cualquier anuncio; puedes cambiarla en cualquier momento en Perfil > Opciones de privacidad",
+                                "Nuestro servidor solo registra que un estudio se desbloqueó con un video, para aplicar el límite diario de esos desbloqueos"
+                            ]
+                        },
+                        {
+                            title: "2.8 Datos que NO Recopilamos",
                             content: "Bible Planner NO recopila:",
                             list: [
                                 "Contactos de tu dispositivo",
@@ -402,6 +439,7 @@ export function PrivacyPolicy() {
                         "Generar el contenido del Estudio Diario con IA que solicitas",
                         "Procesar y validar suscripciones Pro",
                         "Entender cómo se usa la App, corregir fallos y priorizar mejoras",
+                        "Mostrar, cuando lo eliges, videos con recompensa que desbloquean estudios con IA",
                         "Cumplir con obligaciones legales, cuando corresponda"
                     ]
                 },
@@ -428,6 +466,7 @@ export function PrivacyPolicy() {
                     list: [
                         "Supabase: autenticación de cuenta, base de datos en la nube, almacenamiento de archivos (foto de perfil), sincronización en tiempo real y generación de contenido del Estudio con IA",
                         "Firebase (Google): analítica, informes de fallos (Crashlytics) y configuración remota de funciones",
+                        "Google AdMob: muestra de los videos con recompensa opcionales y gestión del consentimiento publicitario",
                         "Sentry: informe de fallos en la versión de Escritorio de la App",
                         "RevenueCat: gestión y validación de suscripciones (en la versión de Escritorio, procesamiento de pagos mediante checkout en la web)",
                         "Google Sign-In y Sign in with Apple: autenticación de cuenta",
