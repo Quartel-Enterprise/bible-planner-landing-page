@@ -181,7 +181,7 @@ export function PrivacyPolicy() {
                 },
                 {
                     title: "Resumo",
-                    content: "O Bible Planner funciona offline para o progresso básico de leitura, mas oferece login opcional (Google/Apple) para sincronizar seus dados entre dispositivos e desbloquear o Estudo Diário com IA. Ao fazer login, coletamos seu nome, e-mail, foto de perfil e a localização aproximada dos dispositivos conectados à sua conta. Utilizamos Firebase e Google Analytics para entender o uso do App. Não vendemos seus dados nem exibimos anúncios. Você pode solicitar a exclusão da sua conta e dos seus dados a qualquer momento pelo e-mail quare.software@gmail.com.",
+                    content: "O Bible Planner funciona offline para o progresso básico de leitura, mas oferece login opcional (Google/Apple) para sincronizar seus dados entre dispositivos e desbloquear o Estudo Diário com IA. Ao fazer login, coletamos seu nome, e-mail, foto de perfil e a localização aproximada dos dispositivos conectados à sua conta. Utilizamos Firebase e Google Analytics para entender o uso do App, e medimos nossas campanhas de anúncios com os pixels da OpenAI e da Meta. Anúncios no App aparecem apenas como vídeos com recompensa opcionais. Não vendemos seus dados. Você pode solicitar a exclusão da sua conta e dos seus dados a qualquer momento pelo e-mail quare.software@gmail.com.",
                     highlight: true
                 }
             ]
@@ -362,7 +362,7 @@ export function PrivacyPolicy() {
                 },
                 {
                     title: "Summary",
-                    content: "Bible Planner works offline for basic reading progress, but offers optional sign-in (Google/Apple) to sync your data across devices and unlock AI Daily Study. When you sign in, we collect your name, email, profile photo, and the approximate location of devices connected to your account. We use Firebase and Google Analytics to understand app usage. We do not sell your data or show ads. You can request deletion of your account and data at any time at quare.software@gmail.com.",
+                    content: "Bible Planner works offline for basic reading progress, but offers optional sign-in (Google/Apple) to sync your data across devices and unlock AI Daily Study. When you sign in, we collect your name, email, profile photo, and the approximate location of devices connected to your account. We use Firebase and Google Analytics to understand app usage, and we measure our ad campaigns with the OpenAI and Meta pixels. Ads in the App only appear as optional rewarded videos. We do not sell your data. You can request deletion of your account and data at any time at quare.software@gmail.com.",
                     highlight: true
                 }
             ]
@@ -543,7 +543,7 @@ export function PrivacyPolicy() {
                 },
                 {
                     title: "Resumen",
-                    content: "Bible Planner funciona sin conexión para el progreso básico de lectura, pero ofrece inicio de sesión opcional (Google/Apple) para sincronizar tus datos entre dispositivos y desbloquear el Estudio Diario con IA. Al iniciar sesión, recopilamos tu nombre, correo electrónico, foto de perfil y la ubicación aproximada de los dispositivos conectados a tu cuenta. Usamos Firebase y Google Analytics para entender el uso de la App. No vendemos tus datos ni mostramos anuncios. Puedes solicitar la eliminación de tu cuenta y tus datos en cualquier momento en quare.software@gmail.com.",
+                    content: "Bible Planner funciona sin conexión para el progreso básico de lectura, pero ofrece inicio de sesión opcional (Google/Apple) para sincronizar tus datos entre dispositivos y desbloquear el Estudio Diario con IA. Al iniciar sesión, recopilamos tu nombre, correo electrónico, foto de perfil y la ubicación aproximada de los dispositivos conectados a tu cuenta. Usamos Firebase y Google Analytics para entender el uso de la App, y medimos nuestras campañas publicitarias con los píxeles de OpenAI y Meta. Los anuncios en la App solo aparecen como videos con recompensa opcionales. No vendemos tus datos. Puedes solicitar la eliminación de tu cuenta y tus datos en cualquier momento en quare.software@gmail.com.",
                     highlight: true
                 }
             ]
