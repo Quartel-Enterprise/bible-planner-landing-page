@@ -80,7 +80,17 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.8 Dados que NÃO Coletamos",
+                            title: "2.8 Medição de Anúncios e de Instalações",
+                            content: "Divulgamos o Bible Planner em plataformas de anúncios, como os anúncios do ChatGPT (OpenAI). Para medir se esses anúncios funcionam, utilizamos:",
+                            list: [
+                                "No site: o pixel de medição da OpenAI e o Meta Pixel, que registram páginas visitadas e cliques nos botões de download e usam cookies próprios do site (como __oppref e __obref) para associar a visita ao anúncio clicado",
+                                "No link para a Google Play: repassamos o identificador da campanha e do clique no anúncio, para que o App saiba de qual anúncio veio a instalação",
+                                "No App Android, na primeira abertura: enviamos ao nosso servidor um identificador aleatório da instalação, o identificador do clique no anúncio (se houver) e o ID de publicidade do Google (exceto se você tiver desativado a personalização de anúncios). Nosso servidor repassa esses dados à OpenAI, junto com o endereço IP e o tipo de dispositivo, apenas para atribuir a instalação à campanha",
+                                "Esses dados não incluem seu nome, e-mail ou conteúdo do App. Você pode redefinir ou desativar o ID de publicidade nas configurações do Android"
+                            ]
+                        },
+                        {
+                            title: "2.9 Dados que NÃO Coletamos",
                             content: "O Bible Planner NÃO coleta:",
                             list: [
                                 "Informações de contatos do seu dispositivo",
@@ -102,6 +112,7 @@ export function PrivacyPolicy() {
                         "Processar e validar assinaturas Pro",
                         "Entender como o App é utilizado, corrigir falhas e priorizar melhorias",
                         "Exibir, quando você escolher, vídeos com recompensa que desbloqueiam estudos com IA",
+                        "Medir o desempenho das nossas campanhas de anúncios",
                         "Cumprir obrigações legais, quando aplicável"
                     ]
                 },
@@ -132,7 +143,8 @@ export function PrivacyPolicy() {
                         "Sentry: relatório de falhas na versão Desktop do App",
                         "RevenueCat: gerenciamento e validação de assinaturas (na versão Desktop, processamento de pagamento via checkout na web)",
                         "Google Sign-In e Sign in with Apple: autenticação de conta",
-                        "Lojas de Aplicativos (Apple/Google): processamento de pagamentos"
+                        "Lojas de Aplicativos (Apple/Google): processamento de pagamentos",
+                        "OpenAI (anúncios do ChatGPT) e Meta: medição de campanhas de anúncios (visitas ao site, cliques de download e instalações atribuídas)"
                     ]
                 },
                 {
@@ -249,7 +261,17 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.8 Data We Do NOT Collect",
+                            title: "2.8 Ad and Install Measurement",
+                            content: "We promote Bible Planner on ad platforms, such as ChatGPT ads (OpenAI). To measure whether these ads work, we use:",
+                            list: [
+                                "On the website: the OpenAI measurement pixel and the Meta Pixel, which record pages visited and clicks on the download buttons, and use the site's own cookies (such as __oppref and __obref) to link the visit to the ad that was clicked",
+                                "On the Google Play link: we pass along the campaign and ad-click identifiers so the App knows which ad the install came from",
+                                "In the Android App, on first launch: we send our server a random install identifier, the ad-click identifier (if any), and your Google Advertising ID (unless you have opted out of ad personalization). Our server forwards this data to OpenAI, together with the IP address and device type, only to attribute the install to the campaign",
+                                "This data does not include your name, email, or App content. You can reset or turn off the Advertising ID in your Android settings"
+                            ]
+                        },
+                        {
+                            title: "2.9 Data We Do NOT Collect",
                             content: "Bible Planner does NOT collect:",
                             list: [
                                 "Contacts from your device",
@@ -271,6 +293,7 @@ export function PrivacyPolicy() {
                         "Process and validate Pro subscriptions",
                         "Understand how the App is used, fix issues, and prioritize improvements",
                         "Show rewarded videos that unlock AI studies, when you choose to watch them",
+                        "Measure the performance of our ad campaigns",
                         "Comply with legal obligations, where applicable"
                     ]
                 },
@@ -301,7 +324,8 @@ export function PrivacyPolicy() {
                         "Sentry: crash reporting on the Desktop version of the App",
                         "RevenueCat: subscription management and validation (on Desktop, payment processing via web checkout)",
                         "Google Sign-In and Sign in with Apple: account authentication",
-                        "App Stores (Apple/Google): payment processing"
+                        "App Stores (Apple/Google): payment processing",
+                        "OpenAI (ChatGPT ads) and Meta: ad campaign measurement (website visits, download clicks, and attributed installs)"
                     ]
                 },
                 {
@@ -418,7 +442,17 @@ export function PrivacyPolicy() {
                             ]
                         },
                         {
-                            title: "2.8 Datos que NO Recopilamos",
+                            title: "2.8 Medición de Anuncios e Instalaciones",
+                            content: "Promocionamos Bible Planner en plataformas de anuncios, como los anuncios de ChatGPT (OpenAI). Para medir si estos anuncios funcionan, utilizamos:",
+                            list: [
+                                "En el sitio web: el píxel de medición de OpenAI y el Meta Pixel, que registran las páginas visitadas y los clics en los botones de descarga, y usan cookies propias del sitio (como __oppref y __obref) para asociar la visita al anuncio en el que se hizo clic",
+                                "En el enlace a Google Play: transmitimos los identificadores de la campaña y del clic en el anuncio, para que la App sepa de qué anuncio provino la instalación",
+                                "En la App de Android, en la primera apertura: enviamos a nuestro servidor un identificador aleatorio de la instalación, el identificador del clic en el anuncio (si existe) y tu ID de publicidad de Google (salvo que hayas desactivado la personalización de anuncios). Nuestro servidor reenvía estos datos a OpenAI, junto con la dirección IP y el tipo de dispositivo, solo para atribuir la instalación a la campaña",
+                                "Estos datos no incluyen tu nombre, correo electrónico ni el contenido de la App. Puedes restablecer o desactivar el ID de publicidad en los ajustes de Android"
+                            ]
+                        },
+                        {
+                            title: "2.9 Datos que NO Recopilamos",
                             content: "Bible Planner NO recopila:",
                             list: [
                                 "Contactos de tu dispositivo",
@@ -440,6 +474,7 @@ export function PrivacyPolicy() {
                         "Procesar y validar suscripciones Pro",
                         "Entender cómo se usa la App, corregir fallos y priorizar mejoras",
                         "Mostrar, cuando lo eliges, videos con recompensa que desbloquean estudios con IA",
+                        "Medir el rendimiento de nuestras campañas publicitarias",
                         "Cumplir con obligaciones legales, cuando corresponda"
                     ]
                 },
@@ -470,7 +505,8 @@ export function PrivacyPolicy() {
                         "Sentry: informe de fallos en la versión de Escritorio de la App",
                         "RevenueCat: gestión y validación de suscripciones (en la versión de Escritorio, procesamiento de pagos mediante checkout en la web)",
                         "Google Sign-In y Sign in with Apple: autenticación de cuenta",
-                        "Tiendas de Aplicaciones (Apple/Google): procesamiento de pagos"
+                        "Tiendas de Aplicaciones (Apple/Google): procesamiento de pagos",
+                        "OpenAI (anuncios de ChatGPT) y Meta: medición de campañas publicitarias (visitas al sitio, clics de descarga e instalaciones atribuidas)"
                     ]
                 },
                 {
