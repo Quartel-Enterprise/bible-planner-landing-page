@@ -35,3 +35,17 @@ This document describes the custom analytics events implemented in the Bible Pla
 - **Menu Tracking**: Uses a `dismissMethodRef` to accurately capture the closure method (`back_button`, `click_outside`, etc.), interacting with the browser's History API (`pushState`/`popstate`).
 - **Video Tracking**: Uses the YouTube IFrame Player API to track precise playback states and progress.
 - **Download Confirmation**: Logic is centralized in `useDownloadConfirmation` hook, which intercepts `onClick` events for download buttons.
+
+## OpenAI Ads (ChatGPT ads) funnel
+
+The OpenAI Ads pixel (`oaiq`, base snippet in `index.html`, helpers in `src/openaiAds.ts`) measures the ad funnel. Each step is a conversion event in Ads Manager → Conversions, on the "My first pixel" data source.
+
+| Step | Event | Sent by | Ads Manager conversion |
+|:--- |:--- |:--- |:--- |
+| Landing page visit | `page_viewed` (standard) | Pixel, once per route path | — (create one if needed) |
+| Store click | `custom` → `download_click` | Pixel, whenever `download_click` / `download_suggestion_click` is logged, and on `/download/*` redirects | "Clique em baixar" |
+| Android install | `app_installed` (standard) | `track-app-install` edge function (bible-planner-api), reported by the app on first launch | "App instalado" |
+
+- **Attribution**: the pixel captures `oppref` from the ad's landing URL (cookie `__oppref`). Google Play links carry `referrer=<utm_* + oppref>`, so the Android app reads `oppref` for `app_installed`, and Firebase Analytics attributes `first_open` to the utm_* values.
+- **UTMs**: the landing utm_* values are kept in `sessionStorage` for the whole visit. When `oppref` is present without a `utm_source`, the referrer defaults to `utm_source=openai&utm_medium=cpc`.
+- iOS installs cannot be attributed: the App Store has no install referrer.

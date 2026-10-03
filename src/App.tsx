@@ -5,6 +5,7 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { AppPreview } from './components/AppPreview'
 import { logEvent } from './analytics'
+import { trackOpenAiPageView } from './openaiAds'
 
 const Features = lazy(() => import('./components/Features').then(module => ({ default: module.Features })));
 
@@ -86,6 +87,7 @@ function AppContent() {
         page_title: document.title
       }
     });
+    trackOpenAiPageView(path, document.title);
   }, [t, i18n.language, location.pathname]); // Added pathname dependency to re-run on route change
 
   // Log UTM parameters

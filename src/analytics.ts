@@ -1,5 +1,6 @@
 import { logEvent as firebaseLogEvent } from "firebase/analytics";
 import { analytics } from "./firebase";
+import { trackOpenAiDownloadClick } from "./openaiAds";
 
 // Define strict types for our events to ensure consistency
 export type AnalyticsEvent =
@@ -43,6 +44,10 @@ export const logEvent = (event: AnalyticsEvent) => {
 
         if (import.meta.env.PROD && analytics) {
             firebaseLogEvent(analytics, event.name as string, event.params as any);
+        }
+
+        if (event.name === 'download_click' || event.name === 'download_suggestion_click') {
+            trackOpenAiDownloadClick(event.params.platform);
         }
     } catch (error) {
         console.warn("Analytics Error:", error);
