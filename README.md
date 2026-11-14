@@ -102,6 +102,10 @@ For a detailed list of tracked events, see [Analytics Events](docs/analytics_eve
 
 The application uses Firebase Remote Config for real-time feature management. For setup instructions, see [Remote Configuration](docs/remote_config.md).
 
+## 🔁 CI
+
+Every pull request is built (`npm run build`) and reviewed by Claude when it opens; the `ai-review` label asks for another review. The `merge-when-green` label squash merges a pull request once every check passed and every review conversation is resolved. See [CI](docs/ci.md), including the secrets it needs.
+
 ## 📄 License
 
 This project is part of the Bible Planner application suite.

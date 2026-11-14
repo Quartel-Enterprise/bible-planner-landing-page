@@ -1,0 +1,98 @@
+name: claude-review-on-request
+
+# Reviews a pull request again when it gets the ai-review label, usually after new pushes, since
+# claude-review only runs when the pull request opens. Nothing starts while another review of the
+# same pull request is still running: the label is removed and that review's comments stand.
+#
+# It is a workflow of its own because every label added to a pull request starts it. Its job is
+# named differently from claude-review's, so the skipped review-on-request check every other label
+# leaves never hides the review check of the opening review.
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  review-on-request:
+    # GitHub withholds secrets from pull requests opened from forks, so the review can't run there.
+    # The run is skipped and the label stays on.
+    if: >-
+      github.event.label.name == 'ai-review' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+    steps:
+      # Any claude-review run not completed yet counts, even before its job is created. Every push
+      # starts one too, which ends in seconds without reviewing (only the push that solves a conflict
+      # the pull request opened with is reviewed), so a run still unfinished after two minutes is the
+      # one that counts: a label added right after a push isn't dropped for it. Every label starts a
+      # run of this workflow too, so one of its runs only counts while a job of it is unfinished: the
+      # job of another label is skipped right away.
+      - name: Look for a review in progress
+        id: in-progress
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          HEAD_REF: ${{ github.head_ref }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          unfinished() {
+            gh api "repos/$GH_REPO/actions/runs?branch=$HEAD_REF&event=pull_request&per_page=100" \
+              --jq ".workflow_runs[]
+                | select(.id != $RUN_ID and .status != \"completed\")
+                | select(.name == \"claude-review\" or .name == \"claude-review-on-request\")
+                | \"\\(.id) \\(.name)\""
+          }
+          runs=$(unfinished)
+          for _ in $(seq 12); do
+            grep -q ' claude-review$' <<< "$runs" || break
+            sleep 10
+            runs=$(unfinished)
+          done
+          while read -r run name; do
+            [ -n "$run" ] || continue
+            if [ "$name" = claude-review ] || gh api "repos/$GH_REPO/actions/runs/$run/jobs" \
+              --jq '.jobs[] | select(.status != "completed") | .name' | grep -q .; then
+              echo "::notice::Another review of this pull request is still running, so none was started."
+              echo "found=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          done <<< "$runs"
+          echo "found=false" >> "$GITHUB_OUTPUT"
+
+      # The head commit, not GitHub's merge of it with main: the review's line numbers have to match the
+      # commit the comments are anchored to. No persisted credentials: this review pushes nothing, and
+      # checkout would keep GITHUB_TOKEN's header in $RUNNER_TEMP, next to the session.
+      - uses: actions/checkout@v7
+        if: steps.in-progress.outputs.found == 'false'
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: Quartel-Enterprise/claude-review/review@1.2.2
+        if: steps.in-progress.outputs.found == 'false'
+        with:
+          oauth-token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # The action itself hands the review what the earlier reviews found.
+          instructions: |
+            The ai-review label asked for another review of this pull request, after new pushes.
+
+      # The label means "review this once", so it goes when the run ends, whatever the outcome.
+      # Adding it again starts another review. A label already removed by hand is not an error.
+      - name: Remove the ai-review label
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if gh pr view "$PR_NUMBER" --json labels --jq '.labels[].name' | grep -qx ai-review; then
+            gh api --method DELETE "repos/$GH_REPO/issues/$PR_NUMBER/labels/ai-review" > /dev/null
+          fi
