@@ -1,0 +1,65 @@
+name: claude-review
+
+# Reviews every pull request with Claude when it opens, fixes what it found, and pushes the fixes as
+# a commit to the pull request's branch. It then posts the findings as one review: the fixed ones in
+# its body, the ones left for the author as an inline comment each. A draft is reviewed when it is
+# marked ready for review instead; a reopened pull request isn't. A draft marked ready a second time is
+# reviewed again, told what the earlier reviews found so it doesn't repeat them.
+#
+# The build check (build.yml) is not gated on this review: it is cheap, so it runs on every push.
+#
+# The job fails only when the run itself does (an expired token, the timeout), never because of what
+# the review found. The fix commit, like every push after the pull request opens, isn't reviewed
+# again: adding the ai-review label does (claude-review-on-request), and that review only comments.
+#
+# GitHub starts no pull_request workflow while the pull request conflicts with its base, so one opened
+# (or marked ready) with a conflict gets no review on that event. That is why pushes run this
+# workflow too: the action reviews the push that solves the conflict, when this workflow has no run
+# between the pull request's opening (or a draft's last marking as ready) and this one, and every
+# other push ends in seconds without reviewing.
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - synchronize
+
+# A push runs in a group of its own, so it neither cancels the opening review nor waits behind it.
+concurrency:
+  group: >-
+    ${{ github.workflow }}-${{ github.event.pull_request.number
+    }}${{ github.event.action == 'synchronize' && format('-{0}', github.run_id) || '' }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # GitHub withholds secrets from pull requests opened from forks, so the review can't run there.
+    # Dependabot's pull requests only get Dependabot's secrets, so they aren't reviewed either.
+    if: >-
+      !github.event.pull_request.draft &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      # On a push, the action reads this workflow's earlier runs.
+      actions: read
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+    steps:
+      # The head commit, not GitHub's merge of it with main: the review's line numbers have to match the
+      # commit the comments are anchored to. No persisted credentials: checkout keeps GITHUB_TOKEN's
+      # header in a file of its own, which claude-code-action doesn't find when it swaps in the App's
+      # token, so git would keep sending the read-only token and the fix push would be refused.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: Quartel-Enterprise/claude-review/review@1.2.2
+        with:
+          oauth-token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          fix: 'true'
