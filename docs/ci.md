@@ -51,8 +51,9 @@ The build is cheap, so it isn't gated on the review the way blitz-split-client's
   or once it expires, the review fails on authentication: create a new one and update the secret.
 - The `ai-review` and `merge-when-green` labels.
 - The `MERGE_WHEN_GREEN_TOKEN` secret, for `merge-when-green` (see below).
-- Recommended: a ruleset on `main` with **Require conversation resolution before merging**, so a manual merge can't
-  skip an open review thread either. Don't make any check required: `claude-review-refs` only runs when workflows
+- The `Main rules` ruleset on `main`, as in blitz-split-client: changes go through a pull request (no approval
+  needed), every review conversation has to be resolved before merging, and `main` can't be force-pushed or deleted.
+  There is no bypass. Don't make any check required: `claude-review-refs` only runs when workflows
   change, and a required check that never runs would block the pull request forever.
 
 ## Merge when green
